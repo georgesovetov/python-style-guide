@@ -15,7 +15,7 @@ Key insigts:
 - The less you think how to format the code the more you think about your task.
 - Formatting is checked or even performed automatically.
 - Interactive debugging is used frequently.
-- Immutability is blissful.
+- Immutability is blissful, `None` is malicious.
 
 
 ## Feedback, Changes and Contibution
