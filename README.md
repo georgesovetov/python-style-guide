@@ -14,7 +14,7 @@ Key insigts:
 - Line-wise diffs are always read and represents logical changes.
 - The less you think how to format the code the more you think about your task.
 - Formatting is checked or even performed automatically.
-- Interactive debugging is used sometimes.
+- Interactive debugging is used frequently.
 - Immutability is blissful.
 
 
