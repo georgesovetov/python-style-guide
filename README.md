@@ -72,8 +72,37 @@ class Foo(  # No parameter on this line
     pass
 ```
 
-If statement is multiline and it's not last element of its parent, parent must also be multiline according to rules above.  
-If statement is multiline and it is last element of its parent, statement may start on same line as parent and immediately followed without line break by parents closing parenthesis, bracket or brace.
+
+#### List Comprehensions
+
+- `for` clause is written on separate line.
+- If `in` clause is not trivial or there is not enough space on line, it's written on separate line.
+- `if` clause, if presented, is written on separate line.
+
+Yes:
+```
+odd_apples = (
+    fruit
+    for index, fruit in enumerate(fruits)
+    if index % 2 == 1 and fruit.name.startswith('apple')
+)
+```
+```
+even_oranges = (
+    fruit
+    for index, fruit 
+    in enumerate(fetch_fruits(  # Non-trivial in clause
+        'api.example.com/fruits',
+        limit=100,
+    ))
+    if index % 2 == 0 and fruit.name.startswith('orange')
+)
+```
+
+#### Nesting
+
+- If statement is multiline and it's not last element of its parent, parent must also be multiline according to rules above.  
+- If statement is multiline and it is last element of its parent, statement may start on same line as parent and immediately followed without line break by parents closing parenthesis, bracket or brace.
 
 Yes:
 
@@ -102,6 +131,26 @@ bar(
     5,
 )
 ```
+```
+make_picture(
+    map(dress, (
+        (a, b),
+        for a, b, c 
+        in fetch_threesomes(
+            url='example.com/api/threesomes',
+            limit=100,
+            order='avg_age',
+            timeout=100,
+        )
+        if all((
+            any(x.sex == 'female' for x in (a, b, c))),
+            any(x.sex == 'male' for x in (a, b, c))),
+        ))
+    )),  # Extra Parethesis because map here is not multiine
+    4,
+    5,
+)
+```
 
 It's easy for eye to find element looking from top to bottom. Number of elements is simply number of rows.
 
@@ -117,32 +166,6 @@ Think of diffs. With this style, diff are as clear as possible. Otherwise, how w
    - first element,
    - last element?
 
-
-#### List Comprehensions
-
-- `for` clause is written on separate line.
-- If `in` clause is not trivial or there is not enough space on line, it's written on separate line.
-- `if` clause, if presented, is written on separate line.
-
-Yes:
-```
-odd_apples = (
-    fruit
-    for index, fruit in enumerate(fruits)
-    if index % 2 == 1 and fruit.name.startswith('apple')
-)
-```
-```
-even_oranges = (
-    fruit
-    for index, fruit 
-    in enumerate(fetch_fruits(  # Non-trivial in clause
-        'api.example.com/fruits',
-        limit=100,
-    ))
-    if index % 2 == 0 and fruit.name.startswith('orange')
-)
-```
 
 ### Single and Double Quotes
 
