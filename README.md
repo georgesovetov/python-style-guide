@@ -179,20 +179,83 @@ some_fruit = {
 - Ask yourself if better name can replace comment. If so, rename amd remove comment.
 
 
-### `with` and `try ... except ... else ... finally ...` Clauses
+### Resources (`with` and `try ... finally` Clauses)
+
+Here the word *resource* has a very wide meaning. Everything that must be closed, released or finalized is *resource*. Examples: files, sockets, mutexes, threads, any devices.
+
+- Enforce resource releasing.
+- Use
+  - `with` with context manager:
+    - if resource is acquired and released more than once or
+    - if resource acquisition and releasing aren't logially coupled with code where resource is used.
+  - `try ... finally`
+    - if acquisition and releasing are essentially part of surrounding code where resource is used.
+- If 3rd party code doesn't offer context manager but acquisition and releasing method instead, create context manager wrapper.
+- Prefer `contextmanager` decorator over context manager classes with `__enter__` and `__exit__`.
+- When writing classes with `__enter__` and `__exit__`, keep in mind:
+  - `__init__` must be light-weight initializer, there must be no resourse initialization in it;
+  - `__enter__` is solely resource acquisition;
+  - `__exit__` is solely resource releasing;
+  - context manager object can be reused.
+
+`with` is preferred because it doesn't leave possibility to forget to release resource. `finally` clause can be forgotten. Context manager can be tested separately.
 
 
-- Prefer `with` over `try ... finally`.
-- Use names defined in `try` clause only in `else` clause.
-  - Don't use them after whole `try ... except`, neither in `except` nor `finally` clauses.
+### Exceptions (`raise` Clause) and Exception Handling (`try ... except ... else` Clause)
+
+- Use `raise ... from` in Python 3.
+- If some data is acquired in `try` clause, it must be either
+  - returned immediately from `try` clause or
+  - passed as argument of exception raised from `try` clause or
+  - used in `else` clause.
 - Use `else` clause.
-- Use `raise ... from ...` in Python 3.
+- Reraise expected exceptions as special classes with descriptive messages.
 
-`with` left no choice for interpreter. `finally` can be forgotten.
+Variables defined in `try` clause, are not guaranteed to be defined in after `try ... except ... else` clause. Even if `except` catches exceptions raised when before variables are defined, it creates very unobvious coupling between possible exceptions and variable definition. Please, follow advice given above.
 
-Only in `else` those names are guaranteed to be defined.
-
-
+Yes:
+```
+def retrieve_cats():
+    url = 'example.com/api/cats'
+    try:
+        return fetch_data(url, limit=100, order='name asc')
+    except TimeoutError as e:
+        message = 'Network problem, check connection to %s' % url
+        raise CatsRetrievalError(message) from e
+    # Not required,
+    # to show explicitly that control flow cannot reach here
+    assert False
+```
+```
+def print_cats():
+    url = 'example.com/api/cats'
+    try:
+        cats = fetch_data(url, limit=100, order='name asc')
+    except TimeoutError as e:
+        print('Network problem, check connection to %s' % url)
+    else:
+        print(cats)
+```
+No:
+```
+def print_cats():
+    try:
+        url = 'example.com/api/cats'  # No need to place here
+        cats = fetch_data(url, limit=100, order='name asc')
+    except TimeoutError as e:
+        print("Network problem, check connection to %s' % url")
+    print(cats)  # May be undefined
+```
+```
+def retieve_cats():
+    cats = None
+    url = 'example.com/api/cats'
+    try:
+        cats = fetch_data(url, limit=100, order='name asc')
+    except TimeoutError as e:
+        raise CatsRetrievalError(message) from e
+    return cats
+```
 
 ### Sequences
 
