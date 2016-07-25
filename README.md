@@ -18,11 +18,16 @@ Key insigts:
 - Immutability is blissful.
 
 
-## Changes and Contibution
+## Feedback, Changes and Contibution
 
 This document is subject to revise, refine and improve. It will not change dramatically.
 
-Everyone who thinks that can make this style guide better, please ask, comment and contribute. You're welcomed.
+Please leave feedback, ask, comment and contribute if you
+- think you can make this style guide better,
+- faced some formatting challenge,
+- have any other questions and comments.
+
+Leave feedback here under lines of code, create issues and pull requests or contact me directly. You're welcomed.
 
 
 ## Style Guide
