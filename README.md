@@ -41,6 +41,8 @@ If statement can be fit into single line, it must be on single line.
 Otherwise, statement must be cautiously written in several lines.  
 In rare cases, it's OK to split statement into multiple lines if it's too complex to understand it at first sight.
 
+Always consider to create new variables and functions.
+
 
 #### Sequences, Function Calls and Definitions, Class Parents
 
@@ -83,6 +85,8 @@ class Foo(  # No parameter on this line
 
 
 #### List Comprehensions
+
+Always consider to transform list comprehension into generator function with `yield`. Avoid appending to list because it violates immutability and, effectively, is not same as list comprehension: it's list, not generator.
 
 - `for` clause is written on separate line.
 - If `in` clause is not trivial or there is not enough space on line, it's written on separate line.
