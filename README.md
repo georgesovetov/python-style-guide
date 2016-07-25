@@ -63,13 +63,15 @@ def foo(  # No parameter on this line
     c,  # Trailing comma
 ):
     pass
-
+```
+```
 foo(  # No parameter on this line
     ['a', 'b'],  # Argument is one-line.
     2,
     3,  # Trailing comma
 )
-
+```
+```
 class Foo(  # No parameter on this line
     Bar,
     Baz,
