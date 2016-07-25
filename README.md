@@ -291,8 +291,13 @@ def retieve_cats():
 
 Yes:
 ```
-single_result, = results  # Don't use results[0] in code
+single_result, = results
+print(single_result)
 ```
 ```
 first_result, *other_results = results  # Python 3 only
+```
+No:
+```
+print(results[0])
 ```
