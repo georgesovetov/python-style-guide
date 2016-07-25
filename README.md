@@ -184,7 +184,7 @@ Yes:
 ```
 some_fruit = {
     'type': 'apple',
-    'name': 'New Apple 2016",
+    'name': "New Apple 2016",
 }
 ```
 
