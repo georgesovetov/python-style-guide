@@ -24,8 +24,8 @@ This document is subject to revise, refine and improve. It will not change drama
 
 Please leave feedback, ask, comment and contribute if you
 - think you can make this style guide better,
-- faced some formatting challenge,
-- have any other questions and comments.
+- have faced some formatting or code style challenge,
+- have any other questions or comments.
 
 Leave feedback here under lines of code, create issues and pull requests or contact me directly. You're welcomed.
 
