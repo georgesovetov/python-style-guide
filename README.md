@@ -3,9 +3,9 @@
 
 ## About This Document
 
-This style guide is written with respect and appreciation of [PEP 8](https://www.python.org/dev/peps/pep-0008/) and, basically, is it's stricter extension.
+This style guide is written with respect and appreciation of [PEP 8](https://www.python.org/dev/peps/pep-0008/) and, basically, is its stricter extension.
 
-Code, formatted according to PEP 8 recommendations and even someone's good sense, is still ugly and unreadable, line-wise diffs might reveal real changes more clearly. This guide is created for those who need more certainty in code style, who frequently ask themselves how to format their code, who strive for perfection in what they produce.
+Code formatted according to PEP 8 recommendations and even someone's good sense is still ugly and unreadable, line-wise diffs might reveal real changes more clearly. This guide is created for those who need more certainty in code style, who frequently ask themselves how to format their code, who strive for perfection in what they produce.
 
 This document contains only difference from PEP 8. Here are only those requirements that are not mentioned there or those that are stricter or more prohibitive.
 
@@ -32,12 +32,12 @@ Everyone who thinks that can make this style guide better, please ask, comment a
 
 If statement can be fit into single line, it must be on single line.  
 Otherwise, statement must be cautiously written in several lines.  
-In rare cases, it's OK to split statement into multiple lines if it's to complex to understand it at first sight.
+In rare cases, it's OK to split statement into multiple lines if it's too complex to understand it at first sight.
 
 
 #### Sequences, Function Calls and Definitions, Class Parents
 
-- All container elements, parameters, arguments and class parents must be written:
+- All container elements, parameters, arguments and class parents must be written
    - one per line,
    - followed by comma,
    - indented by 1 level relative to first line of statement.
@@ -47,7 +47,7 @@ In rare cases, it's OK to split statement into multiple lines if it's to complex
 - Closing parenthesis, bracket or brace must be
    - on next line to last element
    - with same indent as first line of statement;
-   - if needed, it are immediately followed by one or more colon or comma, parenthesis, bracket or brace.
+   - if needed, it's immediately followed by one or more colon or comma, parenthesis, bracket or brace.
 
 Yes:
 ```
