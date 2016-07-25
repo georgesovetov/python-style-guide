@@ -304,3 +304,5 @@ No:
 ```
 print(results[0])
 ```
+
+List unpacking can serve as extra assertion that exactly one result is acquired. As any other assertion, it reveals errors earlier.
