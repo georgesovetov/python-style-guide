@@ -16,6 +16,7 @@ Key insigts:
 - Formatting is checked or even performed automatically.
 - Interactive debugging is used frequently.
 - Immutability is blissful, `None` is malicious.
+- Errors must be exposed as early as possible.
 
 
 ## Feedback, Changes and Contibution
