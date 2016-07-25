@@ -25,6 +25,7 @@ This document is subject to revise, refine and improve. It will not change drama
 Please leave feedback, ask, comment and contribute if you
 - think you can make this style guide better,
 - have faced some formatting or code style challenge,
+- have any good or bad examples of formatting or code style,
 - have any other questions or comments.
 
 Leave feedback here under lines of code, create issues and pull requests or contact me directly. You're welcomed.
