@@ -323,7 +323,7 @@ def retrieve_cats():
     try:
         return fetch_data(url, limit=100, order='name asc')
     except TimeoutError as e:
-        message = 'Network problem, check connection to %s' % url
+        message = "Network problem, check connection to %s" % url
         raise CatsRetrievalError(message) from e
     # Not required,
     # to show explicitly that control flow cannot reach here
@@ -335,7 +335,7 @@ def print_cats():
     try:
         cats = fetch_data(url, limit=100, order='name asc')
     except TimeoutError as e:
-        print('Network problem, check connection to %s' % url)
+        print("Network problem, check connection to %s" % url)
     else:
         print(cats)
 ```
@@ -346,7 +346,7 @@ def print_cats():
         url = 'example.com/api/cats'  # No need to place here
         cats = fetch_data(url, limit=100, order='name asc')
     except TimeoutError as e:
-        print("Network problem, check connection to %s' % url")
+        print("Network problem, check connection to %s" % url)
     print(cats)  # May be undefined
 ```
 ```
