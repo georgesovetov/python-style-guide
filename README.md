@@ -85,6 +85,7 @@ timeModified = datetime.strptime(
 	)),
 	'%a %b %d %H:%M:%S %Y',
 ).date()  # Bad. Statement doesn't end with multilined parentheses
+# .date() is hardly noticable: easy to overlook.
 ```
 ```
 urlpatters = admin_urlpatterns + patterns(  # Arithmetic expression shouldn't be multilined
