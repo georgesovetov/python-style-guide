@@ -39,6 +39,7 @@ Leave feedback here under lines of code, create issues and pull requests or cont
 
 If statement can be fit into single line, it must be on single line.  
 Otherwise, statement must be cautiously written in several lines.  
+If statement is multilined, it must end with part of statement, enclosed in parentheses, brackets or braces, which is actualy broken into multiple lines.
 In rare cases, it's OK to split statement into multiple lines if it's too complex to comprehend it at first sight.
 
 Always consider to create new variables, functions and classes.
