@@ -188,6 +188,19 @@ os.path.join(
 #  - Closing expression is not on the same level as first line.
 ```
 ```
+timeModified = datetime.strptime(time.ctime(os.path.getmtime(
+											os.path.join(pathTo,
+														 'logs',
+														 fileName))), 
+                                 '%a %b %d %H:%M:%S %Y').date()
+                                
+# Allowed by PEP 8. Disallowed by this guide.
+# Similar formatting was reviewed above.
+# In this case we have piece of expression 
+# settled on right side where.
+# Level of nesting doesn't correlate with indent.
+```
+```
 # Arguments on first line forbidden when not using vertical alignment.
 os.path.join(base_directory_path, 'logs',
 	today_dir_name, log_file_name)
