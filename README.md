@@ -47,7 +47,8 @@ Expression or statement may be multilined
    - function call,
    - function definition,
    - class parent list,
-   - list comprehension.
+   - list comprehension,
+   - string formatting with `%` operator.
 
 Always consider to create new variables, functions and classes.
 
@@ -66,6 +67,14 @@ xformsdata = {'schema':{
         '@progress': '',
     },
 }}
+```
+```
+log_file_name = '%s-%s_%d.%s' % (
+	log_file_name_prefix,
+	component.name,
+	ordinal,
+	log_file_extension,
+)
 ```
 
 No:
