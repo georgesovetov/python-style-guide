@@ -225,6 +225,34 @@ even_oranges = (
 ```
 
 
+#### Lambdas
+
+Lambda body can be easily split into multiple lines if enclosed in parentheses.
+ - Opening parenthesis is on first line of `lambda`.
+   - It's the last symbol on this line.
+ - Closing parenthesis is on separate line with same indent as line with `lambda`.
+
+Yes:
+```
+uploader_url = url(
+    r'^helper/ajax-upload/$',
+    AjaxFileUploader(
+        update_filename=lambda request, filename: (  # Nothing after paren
+            '%s.%s%s' % (
+                os.path.splitext(os.path.basename(filename))[0],
+                get_random_string(
+                	length=32,
+                	allowed_chars=string.ascii_uppercase,
+                ),
+                os.path.splitext(filename)[1],
+            )
+        ),
+    ),
+    name="ajax_uploader"
+)
+```
+
+
 #### Nesting
 
 - If statement is multiline and it's not last element of its parent, parent must also be multiline according to rules above.  
@@ -275,6 +303,24 @@ make_picture(
     )),  # Extra Parethesis because map here is not multiine
     4,
     5,
+)
+```
+```
+uploader_url = url(
+    r'^helper/ajax-upload/$',
+    AjaxFileUploader(
+    	# In this case, lambda is not multilined
+    	# but expression returned from lamdba is multilined.
+        update_filename=lambda request, filename: '%s.%s%s' % (
+            os.path.splitext(os.path.basename(filename))[0],
+            get_random_string(
+            	length=32,
+            	allowed_chars=string.ascii_uppercase,
+            ),
+            os.path.splitext(filename)[1],
+        ),
+    ),
+    name="ajax_uploader"
 )
 ```
 
