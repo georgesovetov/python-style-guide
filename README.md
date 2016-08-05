@@ -479,3 +479,27 @@ print(results[0])
 ```
 
 List unpacking can serve as extra assertion that exactly one result is acquired. As any other assertion, it reveals errors earlier.
+
+
+## Recipes
+
+
+### Arithmetic expressions
+
+Never split arithmetic into multiple lines.
+
+ - Use `sum(...)` if you want to add or subtract values.
+ - Use `reduce(operator.mul, ...)` for product. (Rarely needed.)
+ - Introduce more variables and functions, which help:
+   - to understand formula having parts of it explicitly named,
+   - to debug formuals.
+
+
+### Logical expressions
+
+Never split logic into multiple lines. Multiline `if` or `while` condition is very ulgy and its first (or last, depending on formatting) member always differ from others.
+
+ - Use `all(...)` or `any(...)`.
+ - Introduce more variables and functions, which help:
+   - to understand formula having parts of it explicitly named,
+   - to debug formuals.
