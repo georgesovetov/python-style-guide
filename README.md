@@ -37,12 +37,57 @@ Leave feedback here under lines of code, create issues and pull requests or cont
 
 ### Multiline Statements
 
-If statement can be fit into single line, it must be on single line.  
-Otherwise, statement must be cautiously written in several lines.  
-If statement is multilined, it must end with part of statement, enclosed in parentheses, brackets or braces, which is actualy broken into multiple lines.
-In rare cases, it's OK to split statement into multiple lines if it's too complex to comprehend it at first sight.
+Expression or statement may be multilined
+ - if it
+   - cannot be fit into single line or
+   - is too complex to comprehend it at first sight;
+ - if it ends with part that is actually multilined (`(...)`, `[...]` or `{...}`);
+ - if it is:
+   - container variable definition (tuple, dictionary, set, frozenset or similar),
+   - function call,
+   - function definition,
+   - class parent list,
+   - list comprehension.
 
 Always consider to create new variables, functions and classes.
+
+Yes:
+```
+xformsdata = {'schema':{
+    '@xmlns':'',
+    'systemInformation': {
+        '@downloadBuildInformation': 'true',
+        '@downloadTomcatLogs': 'true',
+        '@tomcatLoggingIntervalBegin': defaultLoggingDate,
+        '@tomcatLoggingIntervalEnd': defaultLoggingDate,
+        '@downloadFluteLogs': 'true',
+        '@fluteLoggingIntervalBegin': defaultLoggingDate,
+        '@fluteLoggingIntervalEnd': defaultLoggingDate,
+        '@progress': '',
+    },
+}}
+```
+
+No:
+```
+timeModified = datetime.strptime(
+	time.ctime(os.path.getmtime(
+		os.path.join(pathTo, 'logs/%s' % fileName)
+	)),
+	'%a %b %d %H:%M:%S %Y',
+).date()  # Bad. Statement doesn't end with multilined parentheses
+```
+```
+urlpatters = admin_urlpatterns + patterns(  # Arithmetic expression shouldn't be multilined
+    '',
+    url(r'^robokassa/', include('robokassa.urls', 'robokassa')),
+    url(r'^$', IndexView.as_view(), name='index'),
+    url(r'^map/', include('map.urls', namespace='map')),
+    url(r'^main/', include('main.urls', namespace='main')),
+    url(r'^reviews/', include('reviews.urls', namespace='reviews')),
+    url(r'^events/', include('events.urls', namespace='events')),
+)
+```
 
 
 #### Sequences, Function Arguments and Parameters, Class Parents
