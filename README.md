@@ -41,7 +41,7 @@ If statement can be fit into single line, it must be on single line.
 Otherwise, statement must be cautiously written in several lines.  
 In rare cases, it's OK to split statement into multiple lines if it's too complex to comprehend it at first sight.
 
-Always consider to create new variables and functions.
+Always consider to create new variables, functions and classes.
 
 
 #### Sequences, Function Calls and Definitions, Class Parents
