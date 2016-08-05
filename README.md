@@ -44,7 +44,7 @@ In rare cases, it's OK to split statement into multiple lines if it's too comple
 Always consider to create new variables, functions and classes.
 
 
-#### Sequences, Function Calls and Definitions, Class Parents
+#### Sequences, Function Arguments and Parameters, Class Parents
 
 - All container elements, parameters, arguments and class parents must be written
    - one per line,
