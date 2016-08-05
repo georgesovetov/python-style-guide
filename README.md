@@ -106,94 +106,94 @@ urlpatters = admin_urlpatterns + patterns(  # Arithmetic expression shouldn't be
 
 Yes:
 ```
-def foo(  # No parameter on this line
-    a,
-    b,
-    c,  # Trailing comma
-):
-    pass
-```
-```
-foo(  # No parameter on this line
-    ['a', 'b'],  # Argument is one-line.
-    2,
-    3,  # Trailing comma
+log_file_path = os.path.join(  # No argument on this line
+	base_directory_path,
+	'logs',
+	today_dir_name,
+	log_file_name,  # Trailing comma
 )
 ```
 ```
-class Foo(  # No parameter on this line
-    Bar,
-    Baz,
-    Booze,  # Trailing comma
-):
-    pass
+downloadLogs(  # No argument on this line
+    session,
+	PATH_TO_TOMCAT,
+	['coreLogs', 'pluginLogs', 'systemLogs'],  # Argument is one-line
+	tomcatLoggingInterval,
+	'Tomcat',  # Trailing comma
+)
 ```
 ```
-def long_function_name(
-    var_one,
-    var_two,
-    var_three,
-    var_four,
+def get_log_file_path(  # No parameter on this line
+    base_directory_path,
+    today,
+    log_file_name,  # Trailing comma
 ):
-    print(var_one)
+    # ...
 # Closing parethesis and semicolon are next line:
 # parameters and body are visually distinguishable.
 ```
+```
+class LoggerDownloader(  # No parent on this line
+	Downloader,
+    ConnectionMixin,
+    LoggingMixin,
+    CryptoMixin,  # Trailing comma
+):
+    pass
+```
+
 No:
 ```
 # Aligned with opening delimiter.
-foo = long_function_name(var_one, var_two,
-                         var_three, var_four)
-# Allowed by PEP 8.
-# Disallowed by this guide.
-# Need to be reformatted if function is renamed.
-# May need to be reformatted if first argument is renamed.
-# Obscure diff in case of any changes.
-# Hard to reorder arguments.
-# Indentation is not always divisible by 4:
-# to start new line of arguments
-# several Tabs ans several spaces should be pressed.
+os.path.join(base_directory_path, 'logs',
+			 today_dir_name, log_file_name)
+# Allowed by PEP 8. Disallowed by this guide. Downsides
+#  - Need to be reformatted if function is renamed.
+#  - May need to be reformatted if first argument is renamed.
+#  - Obscure diff in case of any changes.
+#  - Hard to reorder arguments.
+#  - Indentation is not always divisible by 4:
+#    to start new line of arguments
+#    several Tabs ans several spaces should be pressed.
 ```
 ```
 # More indentation included to distinguish this from the rest.
-def long_function_name(
-        var_one, var_two, var_three,
-        var_four):
-    print(var_one)
-# Allowed by PEP 8.
-# Disallowed by this guide.
-# Hard to reorder parameters.
-# Obscure diff if new parameter is added on last line.
-# Closing expression is not on the same level as first line.
+def get_log_file_path(
+	    base_directory_path,
+	    today,
+	    log_file_name):
+    # ...
+# Allowed by PEP 8. Disallowed by this guide. Downsides:
+#  - Hard to reorder parameters.
+#  - Obscure diff if new parameter is added on last line.
+#  - Closing expression is not on the same level as first line.
 ```
 ```
 # Hanging indents should add a level.
-foo = long_function_name(
-    var_one, var_two,
-    var_three, var_four)
-# Allowed by PEP 8.
-# Disallowed by this guide.
-# Hard to reorder parameters.
-# Obscure diff if new parameter is added on last line.
-# Closing expression is not on the same level as first line.
+os.path.join(
+	base_directory_path, 'logs',
+	today_dir_name, log_file_name)
+# Allowed by PEP 8. Disallowed by this guide. Downsides:
+#  - Hard to reorder parameters.
+#  - Obscure diff if new parameter is added on last line.
+#  - Closing expression is not on the same level as first line.
 ```
 ```
 # Arguments on first line forbidden when not using vertical alignment.
-foo = long_function_name(var_one, var_two,
-    var_three, var_four)
-# Disallowed by PEP 8.
-# Disallowed by this guide.
+os.path.join(base_directory_path, 'logs',
+	today_dir_name, log_file_name)
+# Disallowed by PEP 8. Disallowed by this guide.
 ```
 ```
 # Further indentation required as indentation is not distinguishable.
-def long_function_name(
-    var_one, var_two, var_three,
-    var_four):
-    print(var_one)
-# Disallowed by PEP 8.
-# Disallowed by this guide.
-# Closing parethesis and semicolon should be on next line
-# to delimit parameters and function body.
+def get_log_file_path(
+    base_directory_path,
+    today,
+    log_file_name):
+    # ...
+# Disallowed by PEP 8. Disallowed by this guide. Downsides:
+#  - Closing parethesis and semicolon should be on next line
+#    to delimit parameters and function body.
 ```
 
 #### List Comprehensions
