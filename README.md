@@ -21,7 +21,7 @@ Key insigts:
 
 ## Feedback, Changes and Contibution
 
-This document is subject to revise, refine and improve. It will not change dramatically.
+This document is subject to revision, refinment and improvements. It will not change dramatically.
 
 Please leave feedback, ask, comment and contribute if you
 - think you can make this style guide better,
@@ -40,7 +40,7 @@ Leave feedback here under lines of code, create issues and pull requests or cont
 Expression or statement may be multilined
  - if it
    - cannot be fit into single line or
-   - is too complex to comprehend it at first sight;
+   - is too complex to comprehend at first sight;
  - if it ends with part that is actually multilined (`(...)`, `[...]` or `{...}`);
  - if it is:
    - container variable definition (tuple, dictionary, set, frozenset or similar),
@@ -50,7 +50,7 @@ Expression or statement may be multilined
    - list comprehension,
    - string formatting with `%` operator.
 
-Always consider to create new variables, functions and classes.
+Always consider introducing new variables, functions and classes.
 
 Yes:
 ```
@@ -106,7 +106,7 @@ urlpatters = admin_urlpatterns + patterns(  # Arithmetic expression shouldn't be
    - one per line,
    - followed by comma,
    - indented by 1 level relative to first line of statement.
-- First element must be on its separate line, next to first line of statement.
+- First element must be on separate line, next to the first line of statement.
 - Do not group several elements on single line.
 - Last element must be followed by comma.
 - Closing parenthesis, bracket or brace must be
@@ -221,7 +221,7 @@ def get_log_file_path(
 
 #### List Comprehensions
 
-Always consider to transform list comprehension into generator function with `yield`. Avoid appending to list because it violates immutability and, effectively, is not same as list comprehension: it's list, not generator.
+Always consider transforming list comprehension into generator function with `yield`. Avoid appending to list because it violates immutability and, effectively, is not same as list comprehension: it's list, not generator.
 
 - `for` clause is written on separate line.
 - If `in` clause is not trivial or there is not enough space on line, it's written on separate line.
@@ -349,7 +349,7 @@ uploader_url = url(
 
 It's easy for eye to find element looking from top to bottom. Number of elements is simply number of rows.
 
-Think of diffs. With this style, diff are as clear as possible. Otherwise, how would line-wise diff look like if:
+Think of diffs. With this style, diffs are as clear as possible. Otherwise, how would line-wise diff look like if:
 - function name were changed,
 - new element were added:
    - before first element,
