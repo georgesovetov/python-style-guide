@@ -15,7 +15,7 @@ This document contains only difference from PEP 8. Here are only those requireme
 
 Key insigts:
 - Code is read much more ofter then written. (Cited from PEP 8.)
-- Line-wise diffs are always read and represents logical changes.
+- Line-wise diffs are always read and should be as clear as possible.
 - The less you think how to format the code the more you think about your task.
 - Formatting is checked or even performed automatically.
 - Interactive debugging is used frequently.
