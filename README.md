@@ -2,7 +2,7 @@
 
 ## Note from author
 
-This guide is written by me and stored in my GitHub account but I cannot guarantee that I'll update this document according to changes in my views.
+This guide is written by me and stored in my GitHub account but I cannot guarantee that I'll update this document according to changes in my views in a timely manner.
 
 
 ## About This Document
