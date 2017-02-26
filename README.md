@@ -1,5 +1,9 @@
 # Python Style Guide (stricter PEP 8 extension)
 
+## Note from author
+
+This guide is written by me and stored in my GitHub account but I cannot guarantee that I'll update this document according to changes in my views.
+
 
 ## About This Document
 
