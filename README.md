@@ -1,10 +1,5 @@
 # Python Style Guide (stricter PEP 8 extension)
 
-## Note from author
-
-This guide is written by me and stored in my GitHub account but I cannot guarantee that I'll update this document according to changes in my views in a timely manner.
-
-
 ## About This Document
 
 This style guide is written with respect and appreciation of [PEP 8](https://www.python.org/dev/peps/pep-0008/) and, basically, is its stricter extension.
@@ -56,43 +51,30 @@ Expression or statement may be multilined
 
 Always consider introducing new variables, functions and classes.
 
-Yes:
+#### Yes
+##### Closing parens without indent.
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
     'systemInformation': {
-        '@downloadBuildInformation': 'true',
-        '@downloadTomcatLogs': 'true',
-        '@tomcatLoggingIntervalBegin': defaultLoggingDate,
-        '@tomcatLoggingIntervalEnd': defaultLoggingDate,
-        '@downloadFluteLogs': 'true',
-        '@fluteLoggingIntervalBegin': defaultLoggingDate,
-        '@fluteLoggingIntervalEnd': defaultLoggingDate,
         '@progress': '',
     },
 }}
 ```
-```
-log_file_name = '%s-%s_%d.%s' % (
-	log_file_name_prefix,
-	component.name,
-	ordinal,
-	log_file_extension,
-)
-```
 
-No:
+#### No
+##### Statement doesn't end with multilined parentheses
 ```
 timeModified = datetime.strptime(
 	time.ctime(os.path.getmtime(
 		os.path.join(pathTo, 'logs/%s' % fileName)
 	)),
 	'%a %b %d %H:%M:%S %Y',
-).date()  # Bad. Statement doesn't end with multilined parentheses
-# .date() is hardly noticable: easy to overlook.
+).date()  # .date() is hardly noticable: easy to overlook.
 ```
+##### Arithmetic expression multilined
 ```
-urlpatters = admin_urlpatterns + patterns(  # Arithmetic expression shouldn't be multilined
+urlpatters = admin_urlpatterns + patterns(  # 
     '',
     url(r'^robokassa/', include('robokassa.urls', 'robokassa')),
     url(r'^$', IndexView.as_view(), name='index'),
