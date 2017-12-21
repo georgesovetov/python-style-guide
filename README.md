@@ -61,6 +61,22 @@ xformsdata = {'schema':{
     },
 }}
 ```
+##### Closing parens with indent
+```
+xformsdata = {'schema':{
+    '@xmlns':'',
+    'systemInformation': {
+        '@progress': '',
+        },
+    }}
+```
+##### Closing parens on same line (Lisp style)
+```
+xformsdata = {'schema':{
+    '@xmlns':'',
+    'systemInformation': {
+        '@progress': ''}}}
+```
 
 #### No
 ##### Statement doesn't end with multilined parentheses
