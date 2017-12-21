@@ -31,7 +31,7 @@ Please leave feedback, ask, comment and contribute if you
 Leave feedback here under lines of code, create issues and pull requests or contact me directly. You're welcomed.
 
 
-## Style Guide
+## Code Formatting
 
 
 ### Multiline Statements
