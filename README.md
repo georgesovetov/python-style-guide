@@ -50,8 +50,7 @@ Expression or statement MUST be multilined
    - list comprehension,
    - string formatting with `%` operator.
 
-#### Yes
-##### Closing parens without indent — good for diffs
+#### Yes: Closing parens without indent — good for diffs
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
@@ -60,7 +59,7 @@ xformsdata = {'schema':{
     },
 }}
 ```
-##### Closing parens with indent — good for diffs
+#### Yes: Closing parens with indent — good for diffs
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
@@ -69,7 +68,7 @@ xformsdata = {'schema':{
         },
     }}
 ```
-##### Closing parens on same line (Lisp style) — dense
+#### Yes: Closing parens on same line (Lisp style) — dense
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
@@ -77,8 +76,7 @@ xformsdata = {'schema':{
         '@progress': ''}}}
 ```
 
-#### No
-##### Statement doesn't end with multilined parentheses
+#### No: Statement doesn't end with multilined parentheses
 ```
 timeModified = datetime.strptime(
 	time.ctime(os.path.getmtime(
@@ -87,7 +85,7 @@ timeModified = datetime.strptime(
 	'%a %b %d %H:%M:%S %Y',
 ).date()  # .date() is hardly noticable: easy to overlook.
 ```
-##### Arithmetic expression multilined
+#### No: Arithmetic expression multilined
 ```
 urlpatters = admin_urlpatterns + patterns(  # 
     '',
