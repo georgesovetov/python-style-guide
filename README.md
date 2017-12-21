@@ -523,10 +523,10 @@ Never split logic into multiple lines. Multiline `if` or `while` condition is ve
 ## Naming
 
 ### Functions: verbs in imperative form, lowercased, underscores
-Even if function is passes as variable.
+Even if function is passed as variable.
 
 ### Classes: nous, camel case
-Even if class is passes as variable.
+Even if class is passed as variable.
 
 ### Bool variables: positive affirmative sentences, lowercased, underscores
 #### Yes: with `if` and `and` it reads naturally
