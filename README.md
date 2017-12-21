@@ -36,20 +36,19 @@ Leave feedback here under lines of code, create issues and pull requests or cont
 
 ### Multiline Statements
 
-Expression or statement may be multilined
+Try to introduce new variables, functions and classes first.
+
+Expression or statement MUST be multilined
  - if it
-   - cannot be fit into single line or
+   - doesn't fit single line or
    - is too complex to comprehend at first sight;
- - if it ends with part that is actually multilined (`(...)`, `[...]` or `{...}`);
+   - ends with part that is multilined (`(...)`, `[...]` or `{...}`);
  - if it is:
    - container variable definition (tuple, dictionary, set, frozenset or similar),
    - function call,
    - function definition,
-   - class parent list,
    - list comprehension,
    - string formatting with `%` operator.
-
-Always consider introducing new variables, functions and classes.
 
 #### Yes
 ##### Closing parens without indent — good for diffs
