@@ -52,7 +52,7 @@ Expression or statement may be multilined
 Always consider introducing new variables, functions and classes.
 
 #### Yes
-##### Closing parens without indent.
+##### Closing parens without indent — good for diffs
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
@@ -61,7 +61,7 @@ xformsdata = {'schema':{
     },
 }}
 ```
-##### Closing parens with indent
+##### Closing parens with indent — good for diffs
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
@@ -70,7 +70,7 @@ xformsdata = {'schema':{
         },
     }}
 ```
-##### Closing parens on same line (Lisp style)
+##### Closing parens on same line (Lisp style) — dense
 ```
 xformsdata = {'schema':{
     '@xmlns':'',
