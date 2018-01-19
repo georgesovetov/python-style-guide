@@ -66,3 +66,10 @@ def ask_peer(address):
         send_question_to_peer(connection_handle)
         return receive_answer_from_peer(connection_handle)
 ```
+
+## Files, Dirs, Paths and File Object
+
+Dirs are easiest part: there is no dir objects, there can be only paths to directories.
+All dirs should have suffix `_dir`.
+
+The word _file_ meants either file object (with `.read()` and `.write(...)` methods) or path. If you use `pathlib` or its backport `pathlib2`, you probably never open files using `with open(...) as ...:` because you usually write or read file as a whole and, therefore, you don't need file object. So, if first case, use `_file` suffix and, when working with file objects (it's rare), use `_file_object`.
