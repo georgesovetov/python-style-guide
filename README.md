@@ -51,7 +51,7 @@ Expression or statement MUST be multilined
    - string formatting with `%` operator.
 
 #### Yes: Closing parens without indent — good for diffs
-```
+```python
 xformsdata = {'schema':{
     '@xmlns':'',
     'systemInformation': {
@@ -60,7 +60,7 @@ xformsdata = {'schema':{
 }}
 ```
 #### Yes: Closing parens with indent — good for diffs
-```
+```python
 xformsdata = {'schema':{
     '@xmlns':'',
     'systemInformation': {
@@ -69,7 +69,7 @@ xformsdata = {'schema':{
     }}
 ```
 #### Yes: Closing parens on same line (Lisp style) — dense
-```
+```python
 xformsdata = {'schema':{
     '@xmlns':'',
     'systemInformation': {
@@ -77,7 +77,7 @@ xformsdata = {'schema':{
 ```
 
 #### No: Statement doesn't end with multilined parentheses
-```
+```python
 timeModified = datetime.strptime(
 	time.ctime(os.path.getmtime(
 		os.path.join(pathTo, 'logs/%s' % fileName)
@@ -86,7 +86,7 @@ timeModified = datetime.strptime(
 ).date()  # .date() is hardly noticable: easy to overlook.
 ```
 #### No: Arithmetic expression multilined
-```
+```python
 urlpatters = admin_urlpatterns + patterns(  # 
     '',
     url(r'^robokassa/', include('robokassa.urls', 'robokassa')),
@@ -114,7 +114,7 @@ urlpatters = admin_urlpatterns + patterns(  #
    - if needed, it's immediately followed by one or more colon or comma, parenthesis, bracket or brace.
 
 Yes:
-```
+```python
 log_file_path = os.path.join(  # No argument on this line
 	base_directory_path,
 	'logs',
@@ -122,7 +122,7 @@ log_file_path = os.path.join(  # No argument on this line
 	log_file_name,  # Trailing comma
 )
 ```
-```
+```python
 downloadLogs(  # No argument on this line
     session,
 	PATH_TO_TOMCAT,
@@ -131,7 +131,7 @@ downloadLogs(  # No argument on this line
 	'Tomcat',  # Trailing comma
 )
 ```
-```
+```python
 def get_log_file_path(  # No parameter on this line
     base_directory_path,
     today,
@@ -141,7 +141,7 @@ def get_log_file_path(  # No parameter on this line
 # Closing parethesis and semicolon are next line:
 # parameters and body are visually distinguishable.
 ```
-```
+```python
 class LoggerDownloader(  # No parent on this line
 	Downloader,
     ConnectionMixin,
@@ -152,7 +152,7 @@ class LoggerDownloader(  # No parent on this line
 ```
 
 No:
-```
+```python
 # Aligned with opening delimiter.
 os.path.join(base_directory_path, 'logs',
 			 today_dir_name, log_file_name)
@@ -165,7 +165,7 @@ os.path.join(base_directory_path, 'logs',
 #    to start new line of arguments
 #    several Tabs ans several spaces should be pressed.
 ```
-```
+```python
 # More indentation included to distinguish this from the rest.
 def get_log_file_path(
 	    base_directory_path,
@@ -177,7 +177,7 @@ def get_log_file_path(
 #  - Obscure diff if new parameter is added on last line.
 #  - Closing expression is not on the same level as first line.
 ```
-```
+```python
 # Hanging indents should add a level.
 os.path.join(
 	base_directory_path, 'logs',
@@ -187,7 +187,7 @@ os.path.join(
 #  - Obscure diff if new parameter is added on last line.
 #  - Closing expression is not on the same level as first line.
 ```
-```
+```python
 timeModified = datetime.strptime(time.ctime(os.path.getmtime(
 											os.path.join(pathTo,
 														 'logs',
@@ -200,13 +200,13 @@ timeModified = datetime.strptime(time.ctime(os.path.getmtime(
 # settled on right side where.
 # Level of nesting doesn't correlate with indent.
 ```
-```
+```python
 # Arguments on first line forbidden when not using vertical alignment.
 os.path.join(base_directory_path, 'logs',
 	today_dir_name, log_file_name)
 # Disallowed by PEP 8. Disallowed by this guide.
 ```
-```
+```python
 # Further indentation required as indentation is not distinguishable.
 def get_log_file_path(
     base_directory_path,
@@ -227,14 +227,14 @@ Always consider transforming list comprehension into generator function with `yi
 - `if` clause, if presented, is written on separate line.
 
 Yes:
-```
+```python
 odd_apples = (
     fruit
     for index, fruit in enumerate(fruits)
     if index % 2 == 1 and fruit.name.startswith('apple')
 )
 ```
-```
+```python
 even_oranges = (
     fruit
     for index, fruit 
@@ -255,7 +255,7 @@ Lambda body can be easily split into multiple lines if enclosed in parentheses.
  - Closing parenthesis is on separate line with same indent as line with `lambda`.
 
 Yes:
-```
+```python
 uploader_url = url(
     r'^helper/ajax-upload/$',
     AjaxFileUploader(
@@ -282,7 +282,7 @@ uploader_url = url(
 
 Yes:
 
-```
+```python
 foo(
     ['a', 'b'],
     (
@@ -296,7 +296,7 @@ foo(
     ),
 )
 ```
-```
+```python
 bar(
     map(int, (
         '1',
@@ -307,7 +307,7 @@ bar(
     5,
 )
 ```
-```
+```python
 make_picture(
     map(dress, (
         (a, b),
@@ -327,7 +327,7 @@ make_picture(
     5,
 )
 ```
-```
+```python
 uploader_url = url(
     r'^helper/ajax-upload/$',
     AjaxFileUploader(
@@ -367,7 +367,7 @@ Think of diffs. With this style, diffs are as clear as possible. Otherwise, how 
 - Use double quotes if string is meant to be read by human.
 
 Yes:
-```
+```python
 some_fruit = {
     'type': 'apple',
     'name': "New Apple 2016",
@@ -431,7 +431,7 @@ Here the word *resource* has a very wide meaning. Everything that must be closed
 Variables defined in `try` clause, are not guaranteed to be defined in after `try ... except ... else` clause. Even if `except` catches exceptions raised when before variables are defined, it creates very unobvious coupling between possible exceptions and variable definition. Please, follow advice given above.
 
 Yes:
-```
+```python
 def retrieve_cats():
     url = 'example.com/api/cats'
     try:
@@ -443,7 +443,7 @@ def retrieve_cats():
     # to show explicitly that control flow cannot reach here
     assert False
 ```
-```
+```python
 def print_cats():
     url = 'example.com/api/cats'
     try:
@@ -454,7 +454,7 @@ def print_cats():
         print(cats)
 ```
 No:
-```
+```python
 def print_cats():
     try:
         url = 'example.com/api/cats'  # No need to place here
@@ -463,7 +463,7 @@ def print_cats():
         print("Network problem, check connection to %s" % url)
     print(cats)  # May be undefined
 ```
-```
+```python
 def retieve_cats():
     cats = None
     url = 'example.com/api/cats'
@@ -479,15 +479,15 @@ def retieve_cats():
 - Use list unpacking instead of zero element.
 
 Yes:
-```
+```python
 single_result, = results
 print(single_result)
 ```
-```
+```python
 first_result, *other_results = results  # Python 3 only
 ```
 No:
-```
+```python
 print(results[0])
 ```
 
