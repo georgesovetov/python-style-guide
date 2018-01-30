@@ -79,10 +79,10 @@ xformsdata = {'schema':{
 #### No: Statement doesn't end with multilined parentheses
 ```python
 timeModified = datetime.strptime(
-	time.ctime(os.path.getmtime(
-		os.path.join(pathTo, 'logs/%s' % fileName)
-	)),
-	'%a %b %d %H:%M:%S %Y',
+    time.ctime(os.path.getmtime(
+        os.path.join(pathTo, 'logs/%s' % fileName)
+    )),
+    '%a %b %d %H:%M:%S %Y',
 ).date()  # .date() is hardly noticable: easy to overlook.
 ```
 #### No: Arithmetic expression multilined
@@ -116,19 +116,19 @@ urlpatters = admin_urlpatterns + patterns(  #
 Yes:
 ```python
 log_file_path = os.path.join(  # No argument on this line
-	base_directory_path,
-	'logs',
-	today_dir_name,
-	log_file_name,  # Trailing comma
+    base_directory_path,
+    'logs',
+    today_dir_name,
+    log_file_name,  # Trailing comma
 )
 ```
 ```python
 downloadLogs(  # No argument on this line
     session,
-	PATH_TO_TOMCAT,
-	['coreLogs', 'pluginLogs', 'systemLogs'],  # Argument is one-line
-	tomcatLoggingInterval,
-	'Tomcat',  # Trailing comma
+    PATH_TO_TOMCAT,
+    ['coreLogs', 'pluginLogs', 'systemLogs'],  # Argument is one-line
+    tomcatLoggingInterval,
+    'Tomcat',  # Trailing comma
 )
 ```
 ```python
@@ -143,7 +143,7 @@ def get_log_file_path(  # No parameter on this line
 ```
 ```python
 class LoggerDownloader(  # No parent on this line
-	Downloader,
+    Downloader,
     ConnectionMixin,
     LoggingMixin,
     CryptoMixin,  # Trailing comma
@@ -155,7 +155,7 @@ No:
 ```python
 # Aligned with opening delimiter.
 os.path.join(base_directory_path, 'logs',
-			 today_dir_name, log_file_name)
+             today_dir_name, log_file_name)
 # Allowed by PEP 8. Disallowed by this guide. Downsides
 #  - Need to be reformatted if function is renamed.
 #  - May need to be reformatted if first argument is renamed.
@@ -168,9 +168,9 @@ os.path.join(base_directory_path, 'logs',
 ```python
 # More indentation included to distinguish this from the rest.
 def get_log_file_path(
-	    base_directory_path,
-	    today,
-	    log_file_name):
+        base_directory_path,
+        today,
+        log_file_name):
     # ...
 # Allowed by PEP 8. Disallowed by this guide. Downsides:
 #  - Hard to reorder parameters.
@@ -180,8 +180,8 @@ def get_log_file_path(
 ```python
 # Hanging indents should add a level.
 os.path.join(
-	base_directory_path, 'logs',
-	today_dir_name, log_file_name)
+    base_directory_path, 'logs',
+    today_dir_name, log_file_name)
 # Allowed by PEP 8. Disallowed by this guide. Downsides:
 #  - Hard to reorder parameters.
 #  - Obscure diff if new parameter is added on last line.
@@ -189,9 +189,9 @@ os.path.join(
 ```
 ```python
 timeModified = datetime.strptime(time.ctime(os.path.getmtime(
-											os.path.join(pathTo,
-														 'logs',
-														 fileName))), 
+                                            os.path.join(pathTo,
+                                                         'logs',
+                                                         fileName))), 
                                  '%a %b %d %H:%M:%S %Y').date()
                                 
 # Allowed by PEP 8. Disallowed by this guide.
@@ -203,7 +203,7 @@ timeModified = datetime.strptime(time.ctime(os.path.getmtime(
 ```python
 # Arguments on first line forbidden when not using vertical alignment.
 os.path.join(base_directory_path, 'logs',
-	today_dir_name, log_file_name)
+    today_dir_name, log_file_name)
 # Disallowed by PEP 8. Disallowed by this guide.
 ```
 ```python
@@ -263,8 +263,8 @@ uploader_url = url(
             '%s.%s%s' % (
                 os.path.splitext(os.path.basename(filename))[0],
                 get_random_string(
-                	length=32,
-                	allowed_chars=string.ascii_uppercase,
+                    length=32,
+                    allowed_chars=string.ascii_uppercase,
                 ),
                 os.path.splitext(filename)[1],
             )
@@ -331,13 +331,13 @@ make_picture(
 uploader_url = url(
     r'^helper/ajax-upload/$',
     AjaxFileUploader(
-    	# In this case, lambda is not multilined
-    	# but expression returned from lamdba is multilined.
+        # In this case, lambda is not multilined
+        # but expression returned from lamdba is multilined.
         update_filename=lambda request, filename: '%s.%s%s' % (
             os.path.splitext(os.path.basename(filename))[0],
             get_random_string(
-            	length=32,
-            	allowed_chars=string.ascii_uppercase,
+                length=32,
+                allowed_chars=string.ascii_uppercase,
             ),
             os.path.splitext(filename)[1],
         ),
@@ -516,3 +516,4 @@ Never split logic into multiple lines. Multiline `if` or `while` condition is ve
  - Introduce more variables and functions, which help:
    - to understand formula having parts of it explicitly named,
    - to debug formuals.
+
